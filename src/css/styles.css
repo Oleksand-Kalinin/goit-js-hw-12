@@ -1,0 +1,159 @@
+@import url('./reset.css');
+
+body {
+    margin: 16px;
+}
+
+.form-search-imgs {
+    display: flex;
+    justify-content: center;
+    column-gap: 8px;
+    margin-bottom: 32px;
+}
+
+.img-search-request {
+    border: 1px solid #808080;
+    border-radius: 4px;
+    width: 272px;
+    padding: 8px 16px;
+}
+
+.btn-search {
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    min-width: 91px;
+    background-color: #4e75ff;
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #fff;
+}
+
+.btn-search:hover,
+.btn-search:focus {
+    background-color: #6c8cff;
+}
+
+.section-gallery {
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 24px 156px;
+}
+
+.gallery-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.gallery-item {
+    position: relative;
+    border: 1px solid rgba(46, 47, 66, 0.2);
+    border-radius: 16px;
+    overflow: hidden;
+    width: calc((100% - (24px * 3)) / 4);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    transition:
+        transform 250ms linear,
+        box-shadow 250ms linear;
+}
+
+.gallery-item:hover {
+    transform: scale(1.04);
+    box-shadow: none;
+}
+
+.gallery-item:hover .img-info {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.img-info {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding: 4px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    line-height: 2;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    background-color: rgba(46, 47, 66, 0.7);
+    opacity: 0;
+
+    transform: translateY(100%);
+    transition:
+        transform 250ms linear,
+        opacity 250ms linear;
+}
+
+.img-info-text {
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.span-img-info {
+    font-weight: 600;
+    line-height: 1.33333;
+}
+
+.img-lightbox {
+    border-radius: 20%;
+}
+
+
+/* #region Loader */
+
+.loader.js-hide {
+    display: none;
+}
+
+.loader {
+    display: flex;
+    margin: 8px auto;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 120px;
+    height: 120px;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #6c8cff;
+    border-radius: 50%;
+    /* overflow: hidden; */
+}
+
+.loader:before,
+.loader:after {
+    content: '';
+    border-radius: 50%;
+    position: absolute;
+    inset: 0;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3) inset;
+}
+
+.loader:after {
+    box-shadow: 0 5px 0#000207 inset;
+    animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+/* #endregion Loader */

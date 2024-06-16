@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export async function getImgs(requestImgs) {
 
-    axios.defaults.baseURL = 'https://pixabay.com/api'
+    // axios.defaults.baseURL = 'http://pixabay.com/api'
     const option = {
         params: {
             key: '44207215-6e26e0e4c00d7fc92f72264f5',
@@ -15,6 +15,7 @@ export async function getImgs(requestImgs) {
             // per_page: perPage,
         },
     }
-    const response = await axios.get('', option);
+    const response = await axios.get('http://pixabay.com/api', option);
+    console.log(response.data);
     return response.data;
 }

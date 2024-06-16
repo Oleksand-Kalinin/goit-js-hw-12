@@ -1,6 +1,6 @@
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
-import { getImgs } from "./js/pixabay";
+import { getImgs } from "./js/pixabay-api";
 import { markupGallery } from "./js/render-functions";
 
 const formSearchImgs = document.querySelector('.form-search-imgs');
@@ -30,5 +30,3 @@ formSearchImgs.addEventListener('submit', (event) => {
     formSearchImgs.reset();
 
 })
-
-console.log('hello');

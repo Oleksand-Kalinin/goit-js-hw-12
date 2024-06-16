@@ -7,9 +7,7 @@
     "dev": "vite",
     "build": "vite build --base=/goit-js-hw-12/",
     "preview": "vite preview",
-    "push1": "git add .",
-    "push2": "git commit -m 'update'",
-    "push3": "git push"
+    "push": "git add . && git commit -m 'update' && git push"
   },
   "devDependencies": {
     "glob": "^8.1.0",

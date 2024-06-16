@@ -7,8 +7,8 @@ const formSearchImgs = document.querySelector('.form-search-imgs');
 const inputSearchImgs = document.querySelector('.img-search-request');
 const galleryListEl = document.querySelector('.gallery-list');
 const loaderEl = document.querySelector('.loader');
-export let page = 1;
-export let perPage = 15;
+// export let page = 1;
+// export let perPage = 15;
 
 
 formSearchImgs.addEventListener('submit', async (event) => {

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { page, perPage } from '../main.js';
+// import { page, perPage } from '../main.js';
 
 export async function getImgs(requestImgs) {
 
@@ -11,8 +11,8 @@ export async function getImgs(requestImgs) {
             image_type: 'photo',
             orientation: 'horizontal',
             safesearch: true,
-            page,
-            per_page: perPage,
+            // page,
+            // per_page: perPage,
         },
     }
     const response = await axios.get('', option);

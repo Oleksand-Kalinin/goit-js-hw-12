@@ -15,7 +15,7 @@ export function getImgs(requestImgs) {
             // per_page: perPage,
         },
     }
-    return axios.get('https://pixabay.com/api', option)
+    return axios.get('https://pixabay.com/api/', option)
         .then((response) => {
             return response.data;
         })

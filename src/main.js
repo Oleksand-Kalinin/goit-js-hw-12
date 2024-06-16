@@ -21,6 +21,9 @@ formSearchImgs.addEventListener('submit', async (event) => {
             .then((objImgs) => {
                 markupGallery(objImgs, galleryListEl);
                 loaderEl.classList.add('js-hide');
+            })
+            .catch((err) => {
+                console.log(err);
             });
     } else {
         iziToast.error({

@@ -18,7 +18,8 @@ body {
     padding: 8px 16px;
 }
 
-.btn-search {
+.btn-search,
+.btn-load-more {
     border: none;
     border-radius: 8px;
     padding: 8px 16px;
@@ -32,8 +33,15 @@ body {
     color: #fff;
 }
 
+.btn-load-more {
+    display: block;
+    margin: 12px auto;
+}
+
 .btn-search:hover,
-.btn-search:focus {
+.btn-search:focus,
+.btn-load-more:hover,
+.btn-load-more:focus {
     background-color: #6c8cff;
 }
 

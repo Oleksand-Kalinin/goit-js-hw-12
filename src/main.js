@@ -7,15 +7,17 @@ const formSearchImgs = document.querySelector('.form-search-imgs');
 const inputSearchImgs = document.querySelector('.img-search-request');
 const galleryListEl = document.querySelector('.gallery-list');
 const loaderEl = document.querySelector('.loader');
+export let page = 1;
+export let perPage = 15;
 
 
-formSearchImgs.addEventListener('submit', (event) => {
+formSearchImgs.addEventListener('submit', async (event) => {
     event.preventDefault();
     galleryListEl.innerHTML = '';
     loaderEl.classList.remove('js-hide');
 
     if (inputSearchImgs.value.trim() !== '') {
-        getImgs(inputSearchImgs.value, galleryListEl, loaderEl)
+        await getImgs(inputSearchImgs.value, galleryListEl, loaderEl)
             .then((objImgs) => {
                 markupGallery(objImgs, galleryListEl);
                 loaderEl.classList.add('js-hide');
@@ -30,5 +32,3 @@ formSearchImgs.addEventListener('submit', (event) => {
     formSearchImgs.reset();
 
 })
-
-console.log('hello');

@@ -44,3 +44,8 @@ export function markupGallery(objImgs, domEl) {
     }
 
 }
+
+
+// export function addBtnLoadMore() {
+//     return `<button type="button" class="btn-load-more">Load more...</button>`;
+// }

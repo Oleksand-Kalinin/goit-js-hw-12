@@ -15,7 +15,7 @@ export async function getImgs(requestImgs) {
             // per_page: perPage,
         },
     }
-    const response = await axios.get('http://pixabay.com/api', option);
+    const response = await axios.get('https://pixabay.com/api', option);
     console.log(response.data);
     return response.data;
 }

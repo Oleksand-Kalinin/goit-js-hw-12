@@ -30,3 +30,5 @@ formSearchImgs.addEventListener('submit', (event) => {
     formSearchImgs.reset();
 
 })
+
+console.log('hello');

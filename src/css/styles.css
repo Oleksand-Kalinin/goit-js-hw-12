@@ -1,5 +1,9 @@
 @import url('./reset.css');
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 16px;
 }
@@ -35,7 +39,11 @@ body {
 
 .btn-load-more {
     display: block;
-    margin: 12px auto;
+    margin: 24px auto;
+}
+
+.btn-load-more.js-hide {
+    display: none;
 }
 
 .btn-search:hover,
@@ -62,7 +70,7 @@ body {
     border: 1px solid rgba(46, 47, 66, 0.2);
     border-radius: 16px;
     overflow: hidden;
-    width: calc((100% - (24px * 3)) / 4);
+    width: calc((100% - (24px * 2)) / 3);
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     transition:
         transform 250ms linear,

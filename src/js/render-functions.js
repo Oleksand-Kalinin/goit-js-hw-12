@@ -3,11 +3,12 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
-
 const lightbox = new SimpleLightbox('.gallery-list a', {
     captionDelay: 250,
     captionsData: 'alt',
 });
+
+
 
 export function markupGallery(objImgs, domEl) {
     if (objImgs.hits.length !== 0) {
@@ -32,7 +33,7 @@ export function markupGallery(objImgs, domEl) {
             })
             .join('');
 
-        domEl.innerHTML = markup;
+        domEl.insertAdjacentHTML("beforeend", markup);
 
         lightbox.refresh();
 
@@ -44,8 +45,3 @@ export function markupGallery(objImgs, domEl) {
     }
 
 }
-
-
-// export function addBtnLoadMore() {
-//     return `<button type="button" class="btn-load-more">Load more...</button>`;
-// }

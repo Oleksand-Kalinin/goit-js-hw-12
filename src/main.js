@@ -80,10 +80,14 @@ btnLoadMoreEl.addEventListener('click', async () => {
         loaderEl.classList.add('js-hide');
 
         const liEl = document.querySelector('.gallery-item');
-        const heightFirstImg = liEl.getBoundingClientRect().height;
+        const heightTwoImgs = (liEl.getBoundingClientRect().height + 24) * 2;
+
         setTimeout(() => {
-            window.scrollBy(0, heightFirstImg * 2 + 24);
-        }, 1500);
+            window.scrollBy({
+                top: heightTwoImgs,
+                behavior: 'smooth'
+            });
+        }, 1200);
 
     }
     catch (err) {

@@ -11,10 +11,9 @@ import {
 } from "./js/refs.js";
 
 let countImgsForOnePage = 15;
-let numberPage;
+let numberPage = 1;
 let totalPage;
 let currentUserRequest;
-
 
 
 
@@ -24,8 +23,6 @@ formSearchImgs.addEventListener('submit', async (event) => {
     galleryListEl.innerHTML = '';
     loaderEl.classList.remove('js-hide');
     btnLoadMoreEl.classList.add('js-hide');
-
-    numberPage = 1;
 
     if (inputSearchImgs.value.trim() !== '') {
         try {
@@ -59,9 +56,12 @@ formSearchImgs.addEventListener('submit', async (event) => {
 
 
 
-btnLoadMoreEl.addEventListener('click', async () => {
+btnLoadMoreEl.addEventListener('click', async (e) => {
 
     numberPage += 1;
+    const heightForScroll = e.target.getBoundingClientRect().top - 12;
+
+
 
     loaderEl.classList.remove('js-hide');
 
@@ -79,12 +79,10 @@ btnLoadMoreEl.addEventListener('click', async () => {
 
         loaderEl.classList.add('js-hide');
 
-        const liEl = document.querySelector('.gallery-item');
-        const heightTwoImgs = (liEl.getBoundingClientRect().height + 24) * 2;
 
         setTimeout(() => {
             window.scrollBy({
-                top: heightTwoImgs,
+                top: heightForScroll,
                 behavior: 'smooth'
             });
         }, 1200);

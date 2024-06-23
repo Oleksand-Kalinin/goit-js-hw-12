@@ -20,6 +20,7 @@ let currentUserRequest;
 formSearchImgs.addEventListener('submit', async (event) => {
 
     event.preventDefault();
+    numberPage = 1;
     galleryListEl.innerHTML = '';
     loaderEl.classList.remove('js-hide');
     btnLoadMoreEl.classList.add('js-hide');

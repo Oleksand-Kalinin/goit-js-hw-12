@@ -60,6 +60,7 @@ formSearchImgs.addEventListener('submit', async (event) => {
 btnLoadMoreEl.addEventListener('click', async (e) => {
 
     numberPage += 1;
+    btnLoadMoreEl.classList.add('js-hide');
     const heightForScroll = e.target.getBoundingClientRect().top - 12;
 
 
@@ -70,12 +71,15 @@ btnLoadMoreEl.addEventListener('click', async (e) => {
         const objImgs = await getImgs(currentUserRequest, numberPage, countImgsForOnePage);
         markupGallery(objImgs, galleryListEl);
 
+
         if (numberPage >= totalPage) {
             btnLoadMoreEl.classList.add('js-hide');
             iziToast.success({
                 message: `We're sorry, but you've reached the end of search results.`,
                 position: 'bottomCenter',
             });
+        } else {
+            btnLoadMoreEl.classList.remove('js-hide');
         }
 
         loaderEl.classList.add('js-hide');
